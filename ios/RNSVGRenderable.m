@@ -184,26 +184,26 @@
 
 - (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event withTransform:(CGAffineTransform)transfrom
 {
-    if (self.active) {
-        if (!event) {
-            self.active = NO;
-        }
-        return self;
-    }
+    // if (self.active) {
+    //     if (!event) {
+    //         self.active = NO;
+    //     }
+    //     return self;
+    // }
 
-    CGPathRef hitArea = CGPathCreateCopyByTransformingPath(self.hitArea, &transfrom);
-    CGPathRef clipPath = self.clipPath;
-    BOOL contains = CGPathContainsPoint(hitArea, nil, point, NO);
-    CGPathRelease(hitArea);
-    if (contains) {
-        if (!clipPath) {
-            return self;
-        } else {
-            return CGPathContainsPoint(clipPath, nil, point, NO) ? self : nil;
-        }
-    } else {
+    // CGPathRef hitArea = CGPathCreateCopyByTransformingPath(self.hitArea, &transfrom);
+    // CGPathRef clipPath = self.clipPath;
+    // BOOL contains = CGPathContainsPoint(hitArea, nil, point, NO);
+    // CGPathRelease(hitArea);
+    // if (contains) {
+    //     if (!clipPath) {
+    //         return self;
+    //     } else {
+    //         return CGPathContainsPoint(clipPath, nil, point, NO) ? self : nil;
+    //     }
+    // } else {
         return nil;
-    }
+    // }
 }
 
 - (void)setBoundingBox:(CGRect)boundingBox

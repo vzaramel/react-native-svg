@@ -89,11 +89,11 @@ public class RNSVGSvgView extends ViewGroup {
 
     @Override
     public boolean dispatchTouchEvent(MotionEvent ev) {
-        mTargetTag = mSvgViewShadowNode.hitTest(new Point((int) ev.getX(), (int) ev.getY()), this);
+        // mTargetTag = mSvgViewShadowNode.hitTest(new Point((int) ev.getX(), (int) ev.getY()), this);
 
-        if (mTargetTag != -1) {
-            handleTouchEvent(ev);
-        }
+        // if (mTargetTag != -1) {
+        //     handleTouchEvent(ev);
+        // }
 
         return super.dispatchTouchEvent(ev);
     }

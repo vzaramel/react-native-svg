@@ -73,28 +73,28 @@ public class RNSVGGroupShadowNode extends RNSVGPathShadowNode {
     @Override
     public int hitTest(Point point, View view, @Nullable Matrix matrix) {
         int viewTag = -1;
-        Matrix combinedMatrix = new Matrix();
+        // Matrix combinedMatrix = new Matrix();
 
-        if (matrix != null) {
-            combinedMatrix.postConcat(matrix);
-        }
+        // if (matrix != null) {
+        //     combinedMatrix.postConcat(matrix);
+        // }
 
-        combinedMatrix.postConcat(mMatrix);
+        // combinedMatrix.postConcat(mMatrix);
 
-        for (int i = getChildCount() - 1; i >= 0; i--) {
-            ReactShadowNode child = getChildAt(i);
-            if (!(child instanceof RNSVGVirtualNode)) {
-                continue;
-            }
+        // for (int i = getChildCount() - 1; i >= 0; i--) {
+        //     ReactShadowNode child = getChildAt(i);
+        //     if (!(child instanceof RNSVGVirtualNode)) {
+        //         continue;
+        //     }
 
-            RNSVGVirtualNode node = (RNSVGVirtualNode) child;
+        //     RNSVGVirtualNode node = (RNSVGVirtualNode) child;
 
-            View childView = ((ViewGroup) view).getChildAt(i);
-            viewTag = node.hitTest(point, childView, combinedMatrix);
-            if (viewTag != -1) {
-                return (node.isResponsible() || viewTag != childView.getId()) ? viewTag : view.getId();
-            }
-        }
+        //     View childView = ((ViewGroup) view).getChildAt(i);
+        //     viewTag = node.hitTest(point, childView, combinedMatrix);
+        //     if (viewTag != -1) {
+        //         return (node.isResponsible() || viewTag != childView.getId()) ? viewTag : view.getId();
+        //     }
+        // }
 
         return viewTag;
     }

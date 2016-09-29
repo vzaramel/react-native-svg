@@ -44,28 +44,28 @@
 
 - (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event withTransform:(CGAffineTransform)transform
 {
-    CGAffineTransform matrix = CGAffineTransformConcat(self.matrix, transform);
+    // CGAffineTransform matrix = CGAffineTransformConcat(self.matrix, transform);
     
-    for (RNSVGNode *node in [self.subviews reverseObjectEnumerator]) {
-        if ([node isKindOfClass:[RNSVGNode class]]) {
-            if (event) {
-                node.active = NO;
-            } else if (node.active) {
-                return node;
-            }
+    // for (RNSVGNode *node in [self.subviews reverseObjectEnumerator]) {
+    //     if ([node isKindOfClass:[RNSVGNode class]]) {
+    //         if (event) {
+    //             node.active = NO;
+    //         } else if (node.active) {
+    //             return node;
+    //         }
 
-            UIView *view = [node hitTest: point withEvent:event withTransform:matrix];
+    //         UIView *view = [node hitTest: point withEvent:event withTransform:matrix];
             
-            if (view) {
-                node.active = YES;
-                if (node.responsible || (node != view)) {
-                    return view;
-                } else {
-                    return self;
-                }
-            }
-        }
-    }
+    //         if (view) {
+    //             node.active = YES;
+    //             if (node.responsible || (node != view)) {
+    //                 return view;
+    //             } else {
+    //                 return self;
+    //             }
+    //         }
+    //     }
+    // }
     return nil;
 }
 

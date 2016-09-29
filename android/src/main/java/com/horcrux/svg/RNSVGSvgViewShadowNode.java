@@ -96,24 +96,25 @@ public class RNSVGSvgViewShadowNode extends LayoutShadowNode {
     }
 
     public int hitTest(Point point, ViewGroup view) {
-        if (!mResponsible) {
-            return -1;
-        }
+        // if (!mResponsible) {
+        //     return -1;
+        // }
 
-        int count = getChildCount();
-        int viewTag = -1;
-        for (int i = count - 1; i >= 0; i--) {
-            if (!(getChildAt(i) instanceof RNSVGVirtualNode)) {
-                continue;
-            }
+        // int count = getChildCount();
+        // int viewTag = -1;
+        // for (int i = count - 1; i >= 0; i--) {
+        //     if (!(getChildAt(i) instanceof RNSVGVirtualNode)) {
+        //         continue;
+        //     }
 
-            viewTag = ((RNSVGVirtualNode) getChildAt(i)).hitTest(point, view.getChildAt(i));
-            if (viewTag != -1) {
-                break;
-            }
-        }
+        //     viewTag = ((RNSVGVirtualNode) getChildAt(i)).hitTest(point, view.getChildAt(i));
+        //     if (viewTag != -1) {
+        //         break;
+        //     }
+        // }
 
-        return viewTag;
+        // return viewTag;
+        return -1;
     }
 
     public void defineClipPath(RNSVGVirtualNode clipPath, String clipPathRef) {
